@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: turbo
+  datasource:
+    url: jdbc:h2:mem:turbo
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+server:
+  port: 8080
+
+turbo:
+  jwt:
+    secret: turbo-dev-secret-key-change-me-please-32b
+    ttl-hours: 12

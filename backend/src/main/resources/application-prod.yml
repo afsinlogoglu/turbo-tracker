@@ -1,0 +1,23 @@
+turbo:
+  seed:
+    enabled: false
+  jwt:
+    secret: ${JWT_SECRET}
+    ttl-hours: ${JWT_TTL_HOURS:12}
+
+spring:
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  h2:
+    console:
+      enabled: false
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:db/schema-postgres.sql
